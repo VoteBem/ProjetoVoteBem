@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>ERRO 404 | Vote Bem</title>
+		<meta charset="UTF-8">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+		<link rel="stylesheet" href="css/estilo.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script>
+          /*Script para voltar a pagina anterior*/
+          function goBack() {
+            window.history.back();
+          }
+        </script>
+	</head>
+    <style>
+        body{
+            font-family: 'Open Sans', sans-serif;
+        }
+        h1{
+            font-size: 8em;
+            color: white;
+            margin: 0px;
+            margin-top: 5%;
+        }
+        h2{
+            color: white;
+            font-size: 4em;
+            padding-top: 0px;
+            margin: 0px;
+        }
+        .limit_cont{
+            width: 50%;
+            margin: 0 auto;
+        }
+        @media only screen and (max-width: 900px) {/* tablets e menores */
+            .limit_cont {
+                width: 60%;
+            }
+            .personalizado{
+                font-size: 3em;
+            }
+        }
+        @media only screen and (max-width: 700px) {/* tablets e menores */
+            .limit_cont {
+                width: 90%;
+            }
+        }
+        @media only screen and (max-width: 330px) {/* tablets e menores */
+            .separador {
+                margin-top: 2%;
+            }
+        }
+    </style>
+	<body class="blue">
+        <div class="container">
+            <div class="center">
+                <div class="limit_cont">
+                    <div class="col s12">
+                        <h1>ERRO<br> 404</h1>
+                        <h2 class="personalizado">PÁGINA NÃO</h2>
+                        <h2 class="personalizado">ENCONTRADA</h2>
+                        <div class="row">
+                            <a onclick="goBack();" class="waves-effect waves-light btn-large blue lighten-2 separador" href=""><i class="material-icons left"><i class="material-icons">arrow_back</i></i>Voltar</a>
+                            <a class="waves-effect waves-light btn-large blue lighten-2 separador" href="index.html"><i class="material-icons left">home</i>Home</a>                      
+                        </div>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+	</body>
+</html>
