@@ -48,7 +48,7 @@
 					<div class="col s6 m6 l4">
 						<div class="card">
 							<div class="card-image">
-								<img src="../imgs/painel/add7.png">
+								<img src="../imgs/painel/user1.png" height="150px">
 							</div>
 							<div class="card-action center">
 								<a href="#" class="blue-text">Usuários</a>
@@ -58,7 +58,7 @@
 					<div class="col s6 m6 l4">
 						<div class="card">
 							<div class="card-image">
-								<img src="../imgs/painel/chat.png">
+								<img src="../imgs/painel/chat2.png" height="150px">
 							</div>
 							<div class="card-action center">
 								<a href="#" class="blue-text">Fórum</a>
@@ -68,7 +68,7 @@
 					<div class="col s6 m6 l4">
 						<div class="card">
 							<div class="card-image">
-								<img src="../imgs/painel/noticias1.png">
+								<img src="../imgs/painel/noticias1.png" height="150px">
 							</div>
 							<div class="card-action center">
 								<a href="menu_noticias.php" class="blue-text">Notícias</a>
@@ -78,7 +78,7 @@
 					<div class="col s6 m6 l4">
 						<div class="card">
 							<div class="card-image">
-								<img src="../imgs/painel/handshake.png">
+								<img src="../imgs/painel/hand.png" height="150px">
 							</div>
 							<div class="card-action center">
 								<a href="menu_partidos.php" class="blue-text">Partidos</a>
@@ -88,7 +88,7 @@
 					<div class="col s6 m6 l4">
 						<div class="card">
 							<div class="card-image">
-								<img src="../imgs/painel/painel.png">
+								<img src="../imgs/painel/candidatos1.png" height="150px">
 							</div>
 							<div class="card-action center">
 								<a href="menu_candidatos.php" class="blue-text">Candidatos</a>
@@ -98,10 +98,20 @@
 					<div class="col s6 m6 l4">
 						<div class="card">
 							<div class="card-image">
-								<img src="../imgs/painel/agenda.png">
+								<img src="../imgs/painel/agenda.png" height="150px">
 							</div>
 							<div class="card-action center">
 								<a href="menu_eventos.php" class="blue-text">Eventos</a>
+							</div>
+						</div>
+					</div>
+					<div class="col s6 m6 l4">
+						<div class="card">
+							<div class="card-image">
+								<img src="../imgs/painel/quiz.png" height="150px">
+							</div>
+							<div class="card-action center">
+								<a href="menu_quiz.php" class="blue-text">Quiz</a>
 							</div>
 						</div>
 					</div>
