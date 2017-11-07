@@ -46,51 +46,43 @@
 			</nav>	
 			<div class='container'>
 				<h1 class='center'>Quiz</h1>
-				<h5>Analise cada questão e selecione a resposta que achar mais adequeda</h5><br>
 			<?php
-				$cont = 1;
 				foreach($vb as $quiz){
 				    
+					$id             = $quiz['id_questao'];
 					$pergunta       = $quiz["pergunta"];
 					$resposta1      = $quiz["resposta1"];
 					$resposta2      = $quiz["resposta2"];
 					$resposta3      = $quiz["resposta3"];
 					$resposta4      = $quiz["resposta4"];
-					$resposta5      = $quiz["resposta5"];
+					$img            = $quiz['img'];
 					
-					echo "<div class='row  grey lighten-3'>
-							<div class='col s12 m6'><a name='pedro'></a>
-								<form method='POST' action=''>
-									<p>
-										<h5>Questão $cont</h5>
-									</p>
-									<p>
-										<h6>$pergunta</h6>
-									</p>
-									<p>
-										<input name='group1' type='radio' id='test1'/>
-										<label for='test1'>$resposta1</label>
-									</p>
-									<p>
-										<input name='group1' type='radio' id='test2'/>
-										<label for='test2'>$resposta2</label>
-									</p>
-									<p>
-										<input name='group1' type='radio' id='test3'/>
-										<label for='test3'>$resposta3</label>
-									</p>
-									<p>
-										<input name='group1' type='radio' id='test4'/>
-										<label for='test4'>$resposta4</label>
-									</p>
-									<p>
-										<input name='group1' type='radio' id='test5'/>
-										<label for='test5'>$resposta5</label>
-									</p>
-								</form>
-							</div>
-						</div>";
-						$cont++;
+					echo "<div class='row green'>
+                    <div class='col s12'>
+						<div class='col s12 center'>
+                            <h1>$id - $pergunta</h1>
+                        </div> 
+                        <div class='col s12 center'>
+                            <img class='img' src='../imgs/quiz/$img'>
+                        </div> 
+                        <div class='row center'>
+                            <div class='col s12'> 
+                                <div class='input-field col s6'>
+                                    <a class='waves-effect waves-light btn'>$resposta1</a>
+                                </div>
+                                <div class='input-field col s6'>
+                                  <a class='waves-effect waves-light btn'>$resposta2</a>
+                                </div>
+                                <div class='input-field col s6'>
+                                  <a class='waves-effect waves-light btn'>$resposta3</a>
+                                </div>
+                                <div class='input-field col s6'>
+                                  <a class='waves-effect waves-light btn'>$resposta4</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>";
 				}
 			?>
 			<h5>Para conferir o resultado, clique no botão abaixo!</h5><br>
