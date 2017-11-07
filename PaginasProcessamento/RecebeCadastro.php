@@ -12,7 +12,7 @@
         $sexo              = $_POST["sexo"];
         $senha_banco = $senha;
         include "conexao.php";
-        $sql     = "INSERT INTO usuarios VALUES(?,?,?,?,?,?)";
+        $sql     = "INSERT INTO tb_usuarios VALUES(?,?,?,?,?,?)";
         $votebem = $banco -> prepare($sql);	
         $votebem -> execute(array($id,$nome,$email,$senha_banco,$nascimento,$sexo));	
         $votebem = null;
