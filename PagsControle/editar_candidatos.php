@@ -19,7 +19,7 @@
 			$foto              = "img";
 			
 			include "../PaginasProcessamento/conexao.php";
-			$sql = "UPDATE candidatos SET nome=?, foto=?, numero_candidato=?, cargo=?, cidade=?, estado=?, data_nascimento=?, id_partido=? WHERE id_candidato='$id'";	
+			$sql = "UPDATE tb_candidatos SET nome=?, foto=?, numero_candidato=?, cargo=?, cidade=?, estado=?, data_nascimento=?, id_partido=? WHERE id_candidato='$id'";	
 			$votebem = $banco -> prepare($sql);
 			$votebem -> execute(array($nome,$foto,$numero,$cargo,$cidade,$estado,$nascimento,$partido));
 			//header("Location:menu_candidatos.php?cadastro=ok");
