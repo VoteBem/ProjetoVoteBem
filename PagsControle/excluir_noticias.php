@@ -1,12 +1,22 @@
 <?php
 		@$id   = $_GET['id'];
-		
-		if(isset($_GET['enviar'])){
-		$sql = "DELETE FROM tb_noticias WHERE id_noticia= $id";	
+
 		include "../PaginasProcessamento/conexao.php";
+		$sql = "SELECT * FROM tb_noticias WHERE id_noticia= $id";	
 		$votebem = $banco -> prepare($sql);
 		$votebem -> execute();
-		header("Location: menu_noticias.php?cadastro=ok");
+		
+		foreach($votebem as $noticias){
+		  $imgbd = $noticias['imagem'];
+		}
+
+		if(isset($_GET['enviar'])){
+            $sql = "DELETE FROM tb_noticias WHERE id_noticia= $id";	
+            include "../PaginasProcessamento/conexao.php";
+            $votebem = $banco -> prepare($sql);
+            $votebem -> execute();
+            unlink("../imgs/noticias/$imgbd");
+            header("Location: menu_noticias.php?cadastro=ok");
 		}
 	?>
 <!DOCTYPE html>

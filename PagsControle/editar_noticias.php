@@ -6,21 +6,37 @@
 		$votebem = $banco -> prepare($sql);
 		$votebem -> execute();
 		
-		foreach($votebem as $noticias){
-		
-		if(isset($_POST['enviar'])){
-			$titulo       = $_POST["titulo"];
-			$resumo       = $_POST["resumo"];
-			$noticia      = $_POST["noticia"];
-			$img          = "batata";  
-			
-			include "conexao.php";
-			$sql = "UPDATE tb_noticias SET titulo_noticia=?, imagem=?, texto=?, resumo=? WHERE id_noticia='$id'";	
-			$votebem = $banco -> prepare($sql);
-			$votebem -> execute(array($titulo,$img,$noticia,$resumo));
-			header("Location:menu_noticias.php?cadastro=ok");
-			}
+        foreach($votebem as $noticias){
+		  $imgbdold = $noticias['imagem'];
 		}
+/**
+
+Ele nao puxa o 'name' nem 'size' etc...
+assim ele manda pro bd porem como nao tem o $formato ficao somente o nome temporario
+
+*/
+        if(isset($_POST['enviar'])){
+            $titulo       = $_POST["titulo"];
+            $resumo       = $_POST["resumo"];
+            $noticia      = $_POST["noticia"];
+            $Arq          = $_FILES['imgNova'];
+            $nomeArq      = $Arq['name'];
+            $tamanho      = $Arq['size'];
+            $tmp          = $Arq['tmp_name'];
+            $formato      = pathinfo($nomeArq, PATHINFO_EXTENSION);
+            $nomeBdArq    = uniqid().".".$formato;
+            $upload       = move_uploaded_file($tmp, '../imgs/noticias/'.$nomeBdArq );
+
+            unlink("../imgs/noticias/$imgbdold");
+
+            include "conexao.php";
+            $sql = "UPDATE tb_noticias SET titulo_noticia=?, imagem=?, texto=?, resumo=? WHERE id_noticia='$id'";	
+            $votebem = $banco -> prepare($sql);
+            $votebem -> execute(array($titulo,$nomeBdArq,$noticia,$resumo));
+            $votebem = null;
+            header("Location: menu_noticias.php?cadastro=ok");
+
+        }
 	?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -98,8 +114,8 @@
 					</form>
 				</div>
 				<div class='row'>
-					<form method='POST' action='' class='col s12'>
-							<div class="row">
+					<form method='POST' action='teste.php' class='col s12'>
+				        <div class="row">
                         <div class="input-field col s6">
                           <input id="titulo" name="titulo" value='<?php if(isset($noticias)){echo $noticias['titulo_noticia'];}?>' type="text" class="validate" data-length="30">
                           <label for="titulo">Titulo da notícia</label>
@@ -113,7 +129,7 @@
                         <div class="file-field input-field col s12">
                           <div class="btn">
                             <span>Imagem</span>
-                            <input type="file" name="img">
+                            <input type="file" name="imgNova">
                           </div>
                           <div class="file-path-wrapper">
                             <input class="file-path validate" type="text">
